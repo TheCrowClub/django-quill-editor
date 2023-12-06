@@ -36,8 +36,9 @@ class QuillWrapper {
   }
 
   saveToServer(files) {
+    console.log(files)
     const formData = new FormData();
-    files.forEach(file => formData.append('images[]', file));
+    files.forEach(file => formData.append('images', file));
 
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '//' + window.location.host + '/upload/image', true);
